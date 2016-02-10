@@ -1,0 +1,28 @@
+<package>
+  <name>sophus_ros_conversions</name>
+  <version>0.1.0</version>
+  <description>
+   Conversions between ros and sophus.
+  </description>
+  <url type="repository">https://github.com/stonier/sophus_ros_toolkit</url>
+  <url type="bugtracker">https://github.com/stonier/sophus_ros_toolkit/issues</url>
+  <maintainer email="d.stonier@gmail.com">Daniel Stonier</maintainer>
+  <license>BSD</license>
+  <author>Daniel Stonier</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_modules</build_depend>
+  <build_depend>ecl_build</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sophus</build_depend>
+
+  <run_depend>cmake_modules</run_depend>
+  <run_depend>ecl_build</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>sophus</run_depend>
+
+  <export>
+    <rosdoc config="rosdoc.yaml" />
+  </export>
+</package>
