@@ -57,7 +57,11 @@ void vector3MsgToSophus(const geometry_msgs::Vector3 &v, Sophus::SE3f::Point &tr
 void transformMsgToSophus(const geometry_msgs::Transform &transform, Sophus::SE3f &se3);
 
 
-
+/**
+ * Converts tf::StampedTransform to a homogenous transform in sophus.
+ * @param transform
+ * @param se3
+ */
 template<typename T>
 void stampedTransformToSophus( const tf::StampedTransform & transform, Sophus::SE3Group<T> & se3 )
 {
