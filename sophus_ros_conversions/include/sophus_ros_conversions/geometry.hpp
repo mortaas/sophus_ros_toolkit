@@ -16,7 +16,7 @@
 #include <geometry_msgs/Transform.h>
 #include <geometry_msgs/Vector3.h>
 #include <sophus/se3.hpp>
-
+#include <tf/transform_listener.h>
 /*****************************************************************************
 ** Namespaces
 *****************************************************************************/
@@ -55,6 +55,24 @@ void vector3MsgToSophus(const geometry_msgs::Vector3 &v, Sophus::SE3f::Point &tr
  * @param se3
  */
 void transformMsgToSophus(const geometry_msgs::Transform &transform, Sophus::SE3f &se3);
+
+
+
+template<typename T>
+void stampedTransformToSophus( const tf::StampedTransform & transform, Sophus::SE3Group<T> & se3 )
+{
+	Eigen::Quaternion<T> q;
+	Eigen::Matrix<T,3,1> t;
+	
+	q.x() = transform.getRotation().getX();
+	q.y() = transform.getRotation().getY();
+	q.z() = transform.getRotation().getZ();
+	q.w() = transform.getRotation().getW();
+	t.x() = transform.getOrigin().getX();
+	t.y() = transform.getOrigin().getY();
+	t.z() = transform.getOrigin().getZ();
+	se3 = Sophus::SE3Group<T>(q,t);
+}
 
 /**
  * Alternate form of ros transform -> sophus conversion.
