@@ -1,6 +1,6 @@
 <package>
   <name>sophus_ros_conversions</name>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
   <description>
    Conversions between ros and sophus.
   </description>
