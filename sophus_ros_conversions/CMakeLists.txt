@@ -15,6 +15,7 @@ find_package(catkin
         cmake_modules
         ecl_build
         geometry_msgs
+        tf
     )
 
 find_package(Eigen REQUIRED)
@@ -33,6 +34,7 @@ catkin_package(
         cmake_modules
         ecl_build
         geometry_msgs
+        tf
     DEPENDS
         Eigen
         sophus
