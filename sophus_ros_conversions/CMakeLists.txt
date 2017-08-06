@@ -18,7 +18,7 @@ find_package(catkin
         tf
     )
 
-find_package(Eigen REQUIRED)
+find_package(Eigen3 REQUIRED)
 find_package(sophus REQUIRED)
 
 ##############################################################################
@@ -36,7 +36,7 @@ catkin_package(
         geometry_msgs
         tf
     DEPENDS
-        Eigen
+        EIGEN3
         sophus
     )
 
