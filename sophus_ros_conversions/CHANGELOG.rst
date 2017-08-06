@@ -2,6 +2,10 @@
 Changelog
 =========
 
+Forthcoming
+-----------
+* use the eigen3 provided cmake module
+
 0.1.2 (2016-08-30)
 ------------------
 * tf::Transform -> sophus conversion
