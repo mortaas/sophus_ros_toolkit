@@ -63,7 +63,7 @@ void transformMsgToSophus(const geometry_msgs::Transform &transform, Sophus::SE3
  * @param se3
  */
 template<typename T>
-void stampedTransformToSophus( const tf::StampedTransform & transform, Sophus::SE3Group<T> & se3 )
+void stampedTransformToSophus( const tf::StampedTransform & transform, Sophus::SE3<T> & se3 )
 {
 	Eigen::Quaternion<T> q;
 	Eigen::Matrix<T,3,1> t;
@@ -75,7 +75,7 @@ void stampedTransformToSophus( const tf::StampedTransform & transform, Sophus::S
 	t.x() = transform.getOrigin().getX();
 	t.y() = transform.getOrigin().getY();
 	t.z() = transform.getOrigin().getZ();
-	se3 = Sophus::SE3Group<T>(q,t);
+	se3 = Sophus::SE3<T>(q,t);
 }
 
 /**
